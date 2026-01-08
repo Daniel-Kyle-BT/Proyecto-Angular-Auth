@@ -1,0 +1,331 @@
+/* features/tablas/tabla.css */
+*{
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/********************************************/
+.modalcs-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(1px);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  z-index: 1000;
+}
+.modalcs {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 0px 10px 20px;
+  border-radius: 8px;
+  width: auto;
+  height: auto;
+  max-height: 99%;
+}
+/*********************************************/
+main {
+	align-items:start;
+	padding-top: 3vh;
+    width: 100vw;
+    height: 92vh;
+    display: flex;
+    justify-content: center;
+    background-image: url(https://img.freepik.com/fotos-premium/juego-rollos-sushi-jengibre-wasabi-salsa-soja-sobre-fondo-piedra-negra-cocina-tradicional-japonesa-vista-superior-estilo-rustico_187166-2388.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/****************************Divisor de Titulo y botones****************************/
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+	
+}
+
+/*************************Titulo*************************/
+.row>h1 {
+    font-size: 2.3rem;
+    color: black;
+	margin-bottom: 1vh; 
+    font-weight: bolder;
+}
+
+/***************Botones, Imputs y ComBox*****************/
+.row>div, .row>form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;    
+    height: 2.3vw;
+    min-height: 35px;
+    align-items: center; /* Centra verticalmente el contenido */
+    gap: 0.5rem; /* Espaciado entre botones */
+	margin-bottom: 0.6vh; 
+}
+
+/*************Botones**************/
+.boton-header {
+    position: relative;
+    z-index: 0; 
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color:  rgb(233, 173, 0);
+    border: 3px solid rgb(230, 185, 0);
+    height: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+.boton-btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    background: none;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(233, 173, 0), rgb(255, 202, 0), rgb(233, 173, 0));
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;  /* No bloquea clics ni texto */
+}
+
+.boton-header:hover::after {
+    opacity: 1;
+}
+
+/*************ComBox e Imputs***************/
+.cbo-listar, .buscardor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin: 0 1rem;
+}
+
+.buscardor > label,
+.cbo-listar > label {
+    font-size: 1rem;
+    height: 2.15rem;;
+    white-space: nowrap;
+    display: block;
+    padding: 0 1rem;
+    margin: 0 3%;
+    line-height: 2.15rem;
+    border-radius: 0.5rem;
+    background-color: #d5d1defe;
+}
+
+.cbo-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 80px;
+  width: 380px;
+  margin: 10px;
+}
+
+.cbo-form > label {
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    display: block;
+    line-height: 40px;
+    width: 200px;
+    height: 40px;
+    border-radius: 0.5rem;
+}
+
+.cbo-form > select {
+    height: 40px;
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    border: 2px solid rgb(200, 200, 200);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.cbo-listar > select,
+.buscardor > input {
+    height: 2.15rem;
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    border: 2px solid rgb(200, 200, 200);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Estilos individuales */
+.cbo-listar > select {
+    padding: 0.2rem 0.8rem;
+    width: auto;
+}
+
+.cbo-form > select {
+    padding: 0.2rem 0.8rem;
+    width: 343px;
+}
+
+.buscardor > input {
+    width: 10rem;
+    padding-left: 8px;
+}
+
+.btn-label {
+    font-size: 1rem;
+    white-space: nowrap;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    height: 2.15rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto enfocar o pasar*/
+.cbo-listar > select:hover,
+.cbo-listar > select:focus,
+.cbo-form > select:hover,
+.cbo-form > select:focus,
+.buscardor > input:hover,
+.buscardor > input:focus {
+    border-color: rgb(255, 202, 0);
+    box-shadow: 0 0 5px rgb(255, 202, 0);
+}
+
+.btn-label:hover,
+.btn-label:focus {
+    background-color: #e0dfee;
+    box-shadow: 0 0 5px rgb(255, 202, 0);
+}
+
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 0.8rem 1rem;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th, td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+thead>tr>th {
+    background-color: #282839;
+    color: white;
+    text-align: center;
+    border: 1px solid #282839bb;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+    padding: 0.5rem;
+
+}
+
+tbody>tr>td{
+     border: 1px solid #0000001f;   
+}
+
+/**************************** Extras Para la Tabla ****************************/
+
+/*tbody tr:hover {
+    background-color: #fff6;
+}*/
+
+.centrado {
+    text-align: center;
+	text-wrap: nowrap;
+}
+
+td.centrado form {
+    display: inline-block;  /* o inline-flex si necesitas centrar dentro */
+    margin: 0 0.3rem;       /* Espaciado entre botones */
+}
+
+td.centrado.botones {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: nowrap; /* o inline-flex si necesitas centrar dentro */
+    justify-content: center;
+}
+
+
+.btn {
+    margin: 0 0.3rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;         
+    height: 30px;    
+	width: auto;
+	min-width: 85px;              
+    padding: 0rem 0.8rem;       /* Espaciado interno mínimo */
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+/************ Variantes de color ************/
+.btn.btn-danger {
+    background-color: rgb(255, 0, 0);
+}
+.btn.btn-danger:hover {
+    background-color: rgb(210, 0, 0);
+}
+
+.btn.btn-info {
+    background-color: rgb(0, 150, 0);
+}
+.btn.btn-info:hover {
+    background-color: green;
+}
+
+.btn.btn-primary {
+    background-color: rgb(0, 0, 255);
+}
+.btn.btn-primary:hover {
+    background-color: rgb(0, 0, 190);
+}

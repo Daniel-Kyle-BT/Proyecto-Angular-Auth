@@ -1,0 +1,94 @@
+<main>
+  <div #wrapper class="wrapper">
+    <div class="cont-bg1">
+      <div class="bg-animate"></div>
+    </div>
+    <div class="cont-bg2">
+      <svg class="bg-animate2" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="shape" points="0,0 41,0 78,100 0,100"></polygon>
+      </svg>
+      <svg class="bg-animate3" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="shape" points="59,0 100,0 100,100 22,100"></polygon>
+      </svg>
+    </div>
+  <!-- LOGIN -->
+  <div class="form-box login">
+    <h2 class="animation" style="--i:0; --j:21;">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="input-box animation" style="--i:1; --j:22;">
+        <input type="text" formControlName="username" placeholder="-" required/>
+        <label>Usuario</label>
+        <i class="bx bxs-user"></i>
+        @if (getErrorMessage(loginForm, 'username')) {
+          <span class="error-text">{{ getErrorMessage(loginForm, 'username') }}</span>
+        }
+      </div>
+      <div class="input-box animation" style="--i:2; --j:23;">
+        <input type="password" formControlName="password" placeholder="-" required />
+        <label>Contraseña</label>
+        <i class="bx bxs-lock-alt"></i>
+        @if (getErrorMessage(loginForm, 'password')) {
+          <span class="error-text">{{ getErrorMessage(loginForm, 'password') }}</span>
+        }
+      </div>
+      <button type="submit" class="btn animation" style="--i:3; --j:24;">Iniciar Sesión</button>
+      <div class="logreg-link animation" style="--i:4; --j:25;">
+        <p>¿No tienes una cuenta? 
+          <a href="#" (click)="toggleForms(true)" class="register-link">Regístrate</a>
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <div class="info-text login">
+    <h2 class="animation" style="--i:0; --j:20;">Welcome Back</h2>
+    <p class="animation" style="--i:1; --j:21;">
+      Nuevas promociones y ofertas te esperan al alcance de un click
+    </p>
+  </div>
+
+  <!-- REGISTER -->
+  <div class="form-box register">
+    <h2 class="animation" style="--i:17; --j:0;">Sign Up</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="input-box animation" style="--i:18; --j:1;">
+        <input type="text" formControlName="username" required />
+        <label>Usuario</label>
+        <i class="bx bxs-user"></i>
+        @if (getErrorMessage(registerForm, 'username')) {
+          <span class="error-text">{{ getErrorMessage(registerForm, 'username') }}</span>
+        }
+      </div>
+      <div class="input-box animation" style="--i:19; --j:2;">
+        <input type="password" formControlName="password" required />
+        <label>Contraseña</label>
+        <i class="bx bxs-lock-alt"></i>
+        @if (getErrorMessage(registerForm, 'password')) {
+          <span class="error-text">{{ getErrorMessage(registerForm, 'password') }}</span>
+        }
+      </div>
+      <div class="input-box animation" style="--i:20; --j:3;">
+        <input type="text" formControlName="codigoEmpleado" required />
+        <label>Código Empleado</label>
+        <i class="bx bxs-id-card"></i>
+        @if (getErrorMessage(registerForm, 'codigoEmpleado')) {
+          <span class="error-text">{{ getErrorMessage(registerForm, 'codigoEmpleado') }}</span>
+        }
+      </div>
+      <button type="submit" class="btn animation" style="--i:21; --j:4;">Registrar</button>
+      <div class="logreg-link animation" style="--i:22; --j:5;">
+        <p>¿Ya tienes una cuenta? 
+          <a href="#" (click)="toggleForms(false)" class="login-link">Inicia Sesión</a>
+        </p>
+      </div>
+    </form>
+  </div>
+
+  <div class="info-text register">
+    <h2 class="animation" style="--i:17; --j:0;">Únete a nosotros</h2>
+    <p class="animation" style="--i:18; --j:1;">
+      Y disfruta de las ofertas exclusivas para nuestros usuarios
+    </p>
+  </div>
+  </div>
+</main>

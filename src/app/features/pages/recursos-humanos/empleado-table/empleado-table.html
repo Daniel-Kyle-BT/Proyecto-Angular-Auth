@@ -1,0 +1,44 @@
+  <table class="mi-tabla-empleados">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Cargo</th>
+        <th>Distrito</th>
+        <th>Provincia</th>
+        <th>Departamento</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (emp of empleados; track emp.codigo) {
+        <tr>
+          <td class="centrado">{{ emp.codigo }}</td>
+          <td>{{ emp.nombre }}</td>
+          <td>{{ emp.apellido }}</td>
+          <td>{{ emp.cargo }}</td>
+          <td>{{ emp.distrito }}</td>
+          <td>{{ emp.provincia }}</td>
+          <td>{{ emp.departamento }}</td>
+          <td class="centrado">
+            <!-- <button class="btn btn-info" (click)="editarEmpleado.emit(emp)">
+              Editar
+            </button>
+            <button class="btn btn-danger" (click)="eliminarEmpleado.emit(emp.codigo)">
+              Eliminar
+            </button> -->
+            Implementar permisos primero
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="8">No hay datos para estos filtros.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+
+

@@ -1,0 +1,11 @@
+@if (error()) {
+  <div class="error" [class]="error()?.level ?? ''">
+    <strong>{{ error()?.title }}</strong>
+    <p>{{ error()?.message }}</p>
+    <app-card-error 
+        [origin]="error()?.origin" 
+        [statusCode]="error()?.spStatusCode" 
+        [instancia]="error()?.instance"
+      />
+  </div>
+}

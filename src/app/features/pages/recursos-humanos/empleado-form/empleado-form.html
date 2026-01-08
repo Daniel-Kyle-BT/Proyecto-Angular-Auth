@@ -1,0 +1,42 @@
+<div class="modalcs-backdrop">
+  <div class="modalcs">
+    <h2>{{ empleado ? 'Editar Empleado' : 'Nuevo Empleado' }}</h2>
+
+    <form [formGroup]="form" (ngSubmit)="guardar()">
+
+<div class="form-field">
+  <label>Nombre</label>
+  <input formControlName="nombre" />
+</div>
+
+<div class="form-field">
+  <label>Apellido</label>
+  <input formControlName="apellido" />
+</div>
+
+<div class="form-field">
+  <label>DNI</label>
+  <input formControlName="dni" />
+</div>
+
+<div class="form-field">
+  <label>Teléfono</label>
+  <input formControlName="telefono" />
+</div>
+
+<!-- Cargo actual -->
+<div *ngIf="empleado" class="form-field">
+  <label>Cargo actual</label>
+  <input [value]="empleado.cargo" disabled />
+</div>
+
+
+
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="form.invalid">Guardar</button>
+        <button type="button" (click)="cancelar()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

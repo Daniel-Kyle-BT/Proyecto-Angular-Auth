@@ -1,0 +1,9 @@
+  <div class="card-error">
+    <div class="row-error">
+      <img [src]="'/imagenes/' + origin() + '.png'" [alt]="origin() + ' icon'" />
+    </div>
+    <div class="row-error">
+      <strong>Origen: {{ origin() }} {{ statusCode() }}</strong>  
+      <p>{{ instancia() }}</p>
+    </div>
+  </div>

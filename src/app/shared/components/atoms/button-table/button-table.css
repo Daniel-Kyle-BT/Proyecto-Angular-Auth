@@ -1,0 +1,42 @@
+/**************************** Botones y Efectos ****************************/
+.btn {
+    margin: 0 0.3rem; 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;         
+    height: 30px;    
+	width: auto;
+	min-width: 85px;              
+    padding: 0rem 0.8rem;       /* Espaciado interno mínimo */
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/************ Variantes de color ************/
+.btn-danger {
+    background-color: rgb(255, 0, 0);
+}
+.btn-danger:hover {
+    background-color: rgb(210, 0, 0);
+}
+
+.btn-info {
+    background-color: rgb(0, 150, 0);
+}
+.btn-info:hover {
+    background-color: green;
+}
+
+.btn-primary {
+    background-color: rgb(0, 0, 255);
+}
+.btn-primary:hover {
+    background-color: rgb(0, 0, 190);
+}

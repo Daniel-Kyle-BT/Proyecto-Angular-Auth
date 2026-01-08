@@ -1,0 +1,19 @@
+<div [class]="containerClass">
+    @if (label) {
+    <label>{{ label }}</label>
+  }
+  <select
+    [value]="value ?? ''"
+    [disabled]="disabled"
+    (change)="onChange($event)"
+  >
+    <option value="">Seleccione...</option>  
+    @for (item of items; track item.id) {
+      <option [value]="item.id">
+        {{ item.nombre }}
+      </option>
+    } @empty {
+      <option disabled>No hay elementos disponibles</option>
+    }
+  </select>
+</div>

@@ -1,0 +1,28 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <ul>
+      <li><a routerLink="inicio">NegocioNoDefinido</a></li>
+
+
+      <!-- Submenú desplegable: Tablas -->
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Tablas ▾</a>
+        <div class="dropdown-content">
+          <a routerLink="empleado">Empleados</a>     
+        </div>
+      </li>
+    </ul>
+  </div>
+
+<li class="dropdown navbar-right"> 
+  <a href="javascript:void(0)" class="dropbtn user-menu">
+    <i class="bx bxs-user"></i>
+    <span>Bienvenido: {{ authState.user()?.username }}</span> ▾
+  </a>
+  <div class="dropdown-content">
+    <button (click)="logout()">Cerrar sesión</button>
+  </div>
+</li>
+</nav>
+
+<router-outlet></router-outlet>

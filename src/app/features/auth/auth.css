@@ -1,0 +1,453 @@
+main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    padding-left: 14vw;
+    justify-content: left;
+    align-items: center;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 120%;
+    height: 120%;
+    background-image: url(../../../../public/imagenes/fondo-login.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    pointer-events: none;
+}
+
+
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    height: 450px;
+}
+
+
+.wrapper>.form-box.login {
+    left: 0;
+    padding: 0 60px 0 40px;
+}
+
+.wrapper>.form-box.login .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(0.1s * var(--j) + 0.5s);
+}
+
+.wrapper.active>.form-box.login .animation {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(0.1s * var(--i) + 0.5s);
+}
+
+.wrapper>.form-box.register {
+    right: 0;
+    padding: 15px 40px 0 40px;
+    pointer-events: none;
+}
+
+.wrapper.active>.form-box.register {
+    pointer-events: auto;
+}
+
+.wrapper>.form-box.register .animation {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: 0.7s ease;
+    transition-delay: calc(0.1s * var(--j) + 0.5s);
+}
+
+.wrapper.active>.form-box.register .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.1s * var(--i) + 0.5s);
+}
+
+.wrapper>.form-box {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    transform: translateY(0);
+}
+
+.wrapper.active>.form-box,
+.wrapper.deactive>.form-box {
+
+    animation:
+        subir 0.5s ease forwards,
+        bajar 0.5s ease 3.7s forwards;
+}
+
+
+
+.form-box>h2 {
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.input-box>input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #fff;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.input-box>input:focus,
+.input-box>input:valid {
+    border-bottom-color: rgb(255, 202, 0);
+}
+
+
+.input-box>label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.input-box>input:focus~label,
+.input-box>input:valid~label {
+    top: -5px;
+    color: rgb(255, 202, 0);
+}
+
+.input-box>i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+}
+
+.btn {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: 2px solid rgb(255, 202, 0);
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    z-index: 8;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(rgb(160, 116, 0), rgb(255, 202, 0), rgb(160, 116, 0), rgb(255, 202, 0));
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    top: 0;
+}
+
+.logreg-link {
+    font-size: 14.5px;
+    color: #fff;
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.logreg-link>p>a {
+    color: rgb(255, 202, 0);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link>p>a:hover {
+    text-decoration: underline;
+}
+
+.wrapper>.info-text {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    transform: translateY(-3%);
+}
+
+.wrapper.active>.info-text,
+.wrapper.deactive>.info-text {
+
+    animation:
+        bajar 0.5s ease forwards,
+        subir 0.5s ease 3.7s forwards;
+}
+
+.wrapper>.info-text.login {
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+}
+
+.wrapper>.info-text.login>.animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: .7s ease;
+    transition-delay: calc(0.1s * var(--j) + 0.5s);
+}
+
+.wrapper.active>.info-text.login .animation {
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(0.1s * var(--i) + 0.5s);
+}
+
+/*********/
+
+.wrapper>.info-text.register {
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    pointer-events: none;
+}
+
+.wrapper.active>.info-text.register {
+    pointer-events: auto;
+}
+
+.wrapper>.info-text.register .animation {
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: 0.7s ease;
+    transition-delay: calc(0.1s * var(--j) + 0.5s);
+}
+
+.wrapper.active>.info-text.register .animation {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(0.1s * var(--i) + 0.5s);
+}
+
+.info-text>h2 {
+    font-size: 36px;
+    color: #fff;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.info-text>p {
+    font-size: 16px;
+    color: #fff;
+}
+
+
+
+/**************************************************************************/
+.wrapper>.cont-bg1 {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 97%;
+    transform: translateY(-3%);
+    pointer-events: none;
+    background: transparent;
+    z-index: 3;
+    /* Sin animación por defecto */
+    animation: none;
+}
+
+.wrapper.active>.cont-bg1,
+.wrapper.deactive>.cont-bg1 {
+    animation:
+        bajar 0.5s ease forwards,
+        subir 0.5s ease 3.7s forwards;
+}
+
+@keyframes bajar {
+    from {
+        transform: translateY(-3%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-3%);
+    }
+}
+
+/*********************************************************/
+.bg-animate {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at top center,
+            rgb(138, 99, 0),
+            /* más oscuro en el epicentro */
+            rgb(200, 150, 0),
+            rgb(233, 173, 0),
+            rgb(255, 202, 0),
+            rgb(255, 202, 0),
+            rgb(255, 204, 0)
+            /* más claro hacia afuera */
+        );
+    border: 15px solid rgb(255, 202, 0);
+    clip-path: polygon(100% 0, 100% 100%, 27.8% 100%, 72.2% 100%, 35.1% 0, 0 0);
+    /* forma1 */
+    transition: clip-path 1.5s ease-out;
+}
+
+/* Etapas de animación */
+.bg-animate.forma2 {
+    clip-path: polygon(100% 0, 100% 100%, 27.8% 100%, 72.2% 100%, 0 100%, 0 0);
+    transition: clip-path 1.5s ease-in;
+}
+
+.bg-animate.forma3 {
+    clip-path: polygon(100% 0, 64.9% 0, 27.8% 100%, 72.2% 100%, 0 100%, 0 0);
+    transition: clip-path 1.5s ease-out;
+}
+
+
+/*********************************************************/
+.wrapper>.cont-bg2 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+}
+
+
+.cont-bg2>.bg-animate2 {
+    position: absolute;
+    width: 100%;
+    height: 97%;
+    top: 3%;
+    right: 0;
+    border: 2px solid rgb(255, 202, 0);
+    clip-path: polygon(0 0, 41.15% 0, 78.3% 100%, 0% 100%);
+    transition-property: top, right, clip-path;
+    transition-duration: 0.5s, 0.5s, 1s;
+    /* top → 0.5s, right → 2s */
+    transition-timing-function: ease, ease, ease;
+    transition-delay: 3.7s, 1.4s, 1s;
+    overflow: hidden;
+}
+
+.bg-animate2>.shape {
+    fill: rgba(0, 0, 0, 0.75);
+    stroke: rgb(255, 202, 0);
+    stroke-width: 0.4;
+}
+
+.wrapper.active>.cont-bg2>.bg-animate2 {
+    top: 0;
+    right: 100%;
+    clip-path: polygon(0 0, 41.15% 0, 78.3% 100%, 0% 100%);
+    transition-property: top, right, clip-path;
+    transition-duration: 0.5s, 0.3s, 1s;
+    transition-timing-function: ease, ease-in, ease;
+    transition-delay: 0s, 2s, 1s;
+}
+
+/*******************************************/
+.cont-bg2>.bg-animate3 {
+    position: absolute;
+    width: 100%;
+    height: 97%;
+    top: 0;
+    left: 100%;
+    border: 2px solid rgb(255, 202, 0);
+    clip-path: polygon(98% 98%, 100% 0, 100% 100%, 21.7% 100%);
+    transition-property: top, left, clip-path;
+    transition-duration: 0.5s, 0.3s, 2s;
+    /* top → 0.5s, right → 2s */
+    transition-timing-function: ease, ease-in, ease;
+    transition-delay: 0s, 2s, 2s;
+}
+
+.cont-bg2>.bg-animate3>.shape {
+    fill: rgba(0, 0, 0, 0.75);
+    stroke: rgb(255, 202, 0);
+    stroke-width: 0.4;
+}
+
+.wrapper.active>.cont-bg2>.bg-animate3 {
+    top: 3%;
+    left: 0;
+    clip-path: polygon(58.85% 0, 100% 0, 100% 100%, 21.7% 100%);
+    transition-property: top, left, clip-path;
+    transition-duration: 0.5s, 0.4s, 0.1s;
+    /* top → 0.5s, right → 2s */
+    transition-timing-function: ease, ease-in, ease;
+    transition-delay: 3.7s, 1.5s, 0.1s;
+    /* delay solo para top */
+}
+
+
+.error-text {
+  color: #ff4d4d;
+  font-size: 11px;
+  position: absolute;
+  bottom: -15px; /* Aparece justo debajo del input sin mover el resto */
+  left: 5px;
+  font-weight: bold;
+}

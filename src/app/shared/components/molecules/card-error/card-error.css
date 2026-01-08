@@ -1,0 +1,36 @@
+.card-error {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.row-error {
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 0.1vw;
+    flex-direction: column;
+    
+}
+
+.row-error>img {
+    width: 3.5vw;
+    height: 3.5vw;
+    clip-path: circle();
+    background-color: rgba(255, 255, 255, 0.75); 
+}
+
+.row-error>strong {
+    font-size: 1.2vw;
+    color: #333;
+    padding-left: 1vw;
+    -webkit-text-stroke: 0.2px rgba(255, 255, 255, 0.4);
+}
+
+.row-error>p {
+    font-size: 1.1vw;
+    color: #666;
+    padding-left: 1vw;
+    -webkit-text-stroke: 0.2px rgba(255, 255, 255, 0.4);
+}

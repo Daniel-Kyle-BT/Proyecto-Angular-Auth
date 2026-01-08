@@ -1,0 +1,201 @@
+* {
+  list-style: none;
+    text-decoration: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #20202a; /* 🔧 Color de fondo navbar */
+  height: 8vh;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  flex-wrap: wrap; /* Para responsive */
+}
+
+/* =========================
+   📌 NAVBAR IZQUIERDA (Menú principal)
+========================= */
+.navbar-left ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-left ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Evita salto de línea */
+}
+
+.navbar-left ul li a:hover {
+  color: rgb(255, 202, 0);
+}
+
+/* =========================
+   📂 DROPDOWN GENERAL
+========================= */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {  
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2a2a3d;
+  min-width: 160px;
+  width: max-content; /* Ajusta al contenido más largo */
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+  color: #fff;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #383852; /* 🔧 Fondo hover dropdown */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* =========================
+   👤 USUARIO (Navbar derecha)
+
+.navbar-right {
+  position: relative;
+}
+*/
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  max-width: 200px; 
+}
+
+.user-menu i {
+  font-size: 22px;
+  color: #fff;
+}
+
+.user-menu span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+}/*
+
+.user-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #2a2a3d;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+  min-width: 100%; 
+  width: max-content; 
+}
+
+.user-dropdown button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 8px;
+  transition: background 0.3s ease;
+}
+
+.user-dropdown button:hover {
+  background: #383852; 
+}
+========================= */
+/* =========================
+   ✨ ANIMACIONES
+========================= */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-left ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navbar-right {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .user-menu {
+    max-width: 100%;
+  }
+
+  .user-dropdown {
+    min-width: 100%;
+  }
+}
+
+/* Para que dropdown-content dentro de navbar-right también aparezca igual */
+.navbar-right .dropdown-content {
+  top: 100%;
+  right: 0;
+  left: auto; /* Se alinea a la derecha */
+  min-width: 180px; /* Ajusta ancho si quieres */
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+  background-color: #2a2a3d;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  animation: fadeIn 0.3s ease;
+}
+
+.navbar-right .dropdown:hover .dropdown-content,
+.navbar-right .dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+.navbar-right .dropdown-content button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.navbar-right .dropdown-content button:hover {
+  background: #383852; /* Igual que tablas hover */
+}

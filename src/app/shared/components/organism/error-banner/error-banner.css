@@ -1,0 +1,72 @@
+.error {
+  width: 30vw;
+  height: auto;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  right: 1vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5vw 1vw;
+}
+
+.error>strong {
+  font-size: 1.3vw;
+  margin-bottom: 0.2vw;
+}
+
+.error>p {
+  font-size: 1.1vw;
+  margin-bottom: 0.5vw;
+}
+
+/*************** Info Styles ******************/
+.error.info {
+  background-color: #b3ffaed5;
+  border: 1px solid darkgreen;
+  border-left: 8px solid darkgreen;
+  box-shadow: 0 8px 12px rgba(81, 207, 102, 0.177);
+}
+
+.error.info>strong {
+  color: darkgreen;
+}
+
+.error.info>p {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*************** Warning Styles ******************/
+.error.warning {
+  background-color: #ffeaa4d5;
+  border: 1px solid orange;
+  border-left: 8px solid orange;
+  box-shadow: 0 8px 12px rgba(255, 166, 0, 0.177);
+}
+
+.error.warning>strong {
+  color: rgb(255, 134, 4);
+}
+
+.error.warning>p {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*************** Critical Styles ******************/
+
+.error.critical {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid darkred;
+  border-left: 8px solid darkred;
+  box-shadow: 0 8px 12px rgba(255, 0, 0, 0.177);
+}
+
+.error.critical>strong {
+  color: darkred;
+}
+
+.error.critical>p {
+  color: rgba(255, 255, 255, 0.75);
+}

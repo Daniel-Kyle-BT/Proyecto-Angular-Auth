@@ -1,0 +1,150 @@
+/* features/tablas/form.css */
+.cabezera{
+  width: 98%;
+  height: auto;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: auto;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 80px;
+  width: 380px;
+  margin: 10px;
+}
+
+.form-field > label {
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    display: block;
+    line-height: 40px;
+    width: 200px;
+    height: 40px;
+    border-radius: 0.5rem;
+}
+
+.field > input,
+.form-field > input {
+    height: 40px;
+    width: 360px;
+    font-size: 1rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    border: 2px solid rgb(200, 200, 200);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+.field > input,
+.form-field > input {
+    width: 90%;
+    padding-left: 8px;
+}
+
+.form-field  > input:hover,
+.form-field  > input:focus {
+    border-color: rgb(255, 202, 0);
+    box-shadow: 0 0 5px rgb(255, 202, 0);
+}
+/*******************************************************/
+
+.direcciones {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 200px;
+  width: 1200px;
+}
+
+.direcciones>div {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 100px;
+  width: 400px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 80px;
+  width: 380px;
+  margin: 10px;
+}
+
+.field > label {
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    display: block;
+    line-height: 40px;
+    width: 200px;
+    height: 40px;
+    border-radius: 0.5rem;
+}
+
+
+/*******************************************************/
+.form-actions {
+  width: 85%;
+  margin: 10px;
+  height: auto;
+  display: flex;
+  justify-content: left;
+}
+.btn {
+  margin: 0 0.3rem; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;         
+  height: 30px;    
+	width: auto;
+	min-width: 85px;              
+    padding: 0rem 0.8rem;       /* Espaciado interno mínimo */
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+    background-color: gray;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/************ Variantes de color ************/
+.btn.btn-danger {
+    background-color: rgb(255, 0, 0);
+}
+.btn.btn-danger:hover {
+    background-color: rgb(210, 0, 0);
+}
+
+.btn.btn-info {
+    background-color: rgb(0, 150, 0);
+}
+.btn.btn-info:hover {
+    background-color: green;
+}
+
+.btn.btn-primary {
+    background-color: rgb(0, 0, 255);
+}
+.btn.btn-primary:hover {
+    background-color: rgb(0, 0, 190);
+}

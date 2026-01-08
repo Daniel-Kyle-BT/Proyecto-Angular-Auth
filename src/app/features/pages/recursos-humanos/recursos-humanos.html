@@ -1,0 +1,60 @@
+<main>
+  <app-empleado-form
+    *ngIf="showForm()"
+    [empleado]="selectedEmpleado()"
+    (close)="onFormClose($event)">
+  </app-empleado-form>
+  <div class="cont_tabla">
+    <section class="table_header">
+      <div class="row">
+        <h1>Lista de Empleados</h1>
+      </div>
+      <div class="row">
+        <div>
+          <div class="boton-header">
+            <!-- <button class="boton-btn" (click)="nuevoEmpleado()">Nuevo</button> -->
+             <button class="boton-btn" >No se ha gestionado permisos</button>
+          </div>
+        </div>
+        <div>
+          <app-select
+            label="Cargo"
+            [items]="cargos()"
+            [value]="filtros().cargoId"
+            parseAs="number"
+            (valueChange)="onFiltroChange('cargoId', $event)">
+          </app-select>
+
+          <app-select
+            label="Departamento"
+            [items]="departamentos()"
+            [value]="filtros().departamentoId"
+            (valueChange)="onFiltroChange('departamentoId', $event)">
+          </app-select>
+
+          <app-select
+            label="Provincia"
+            [items]="provincias()"
+            [value]="filtros().provinciaId"
+            [disabled]="!filtros().departamentoId"
+            (valueChange)="onFiltroChange('provinciaId', $event)">
+          </app-select>
+
+          <app-select
+            label="Distrito"
+            [items]="distritos()"
+            [value]="filtros().distritoId"
+            [disabled]="!filtros().provinciaId"
+            (valueChange)="onFiltroChange('distritoId', $event)">
+          </app-select>
+        </div>
+      </div>
+    </section>
+    <section class="table_body">
+      <app-empleado-table
+        [empleados]="empleados()"
+        (editarEmpleado)="editarEmpleado($event)">
+      </app-empleado-table>
+    </section>
+  </div>
+</main>
