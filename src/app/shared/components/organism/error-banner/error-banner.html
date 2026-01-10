@@ -2,9 +2,18 @@
   <div class="error" [class]="error()?.level ?? ''">
     <strong>{{ error()?.title }}</strong>
     <p>{{ error()?.message }}</p>
+    @if (error()?.errors?.length) {
+      <ul class="error-list">
+        @for (e of error()!.errors; track e.field) {
+          <li>
+            <strong>{{ e.field }}:</strong> {{ e.message }}
+          </li>
+        }
+      </ul>
+    }
     <app-card-error 
         [origin]="error()?.origin" 
-        [statusCode]="error()?.spStatusCode" 
+        [statusCode]="error()?.statusCode" 
         [instancia]="error()?.instance"
       />
   </div>

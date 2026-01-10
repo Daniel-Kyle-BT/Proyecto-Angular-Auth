@@ -9,7 +9,7 @@ export class ErrorStateService {
 
   private timer?: number;
 
-  show(problem: ApiProblemDetail, autoCloseMs = 5000) {
+  show(problem: ApiProblemDetail, autoCloseMs = 7000) {
     this._error.set(this.toUiError(problem));
 
     clearTimeout(this.timer);
@@ -23,25 +23,15 @@ export class ErrorStateService {
 
   private toUiError(p: ApiProblemDetail): UiError {
     const cfg = STATUS_UI[p.status as keyof typeof STATUS_UI];
-
-    if (cfg) {
-      return {
-        title: cfg.title,
-        message: p.detail,
-        origin: p.origin,
-        instance: p.instance,
-        spStatusCode: p.status,
-        level: cfg.level
-      };
-    }
-
+    
     return {
-      title: this.resolveTitleByOrigin(p.origin),
+      title: cfg?.title ?? this.resolveTitleByOrigin(p.origin),
       message: p.detail,
       origin: p.origin,
       instance: p.instance,
-      spStatusCode: p.status,
-      level: 'error'
+      statusCode: p.status,
+      level: cfg?.level ?? 'error',
+      errors: p.errors
     };
   }
 

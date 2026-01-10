@@ -5,5 +5,8 @@ export interface ApiProblemDetail {
   detail: string;
   instance: string;
   origin?: 'DATABASE' | 'BUSINESS' | 'SECURITY' | 'SPRING';
-  spStatusCode?: number;
+  errors?: { field: string; message: string }[];
+  properties?: {
+    origin?: ApiProblemDetail['origin'];
+  };
 }

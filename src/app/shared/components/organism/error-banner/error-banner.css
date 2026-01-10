@@ -70,3 +70,23 @@
 .error.critical>p {
   color: rgba(255, 255, 255, 0.75);
 }
+
+
+.error-list {
+  margin: 0.3vw 0 0;
+  padding-left: 1.2vw;
+  font-size: 0.95vw;
+}
+
+.error-list li {
+  margin-bottom: 0.2vw;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.error.warning .error-list li {
+  color: rgb(120, 80, 0);
+}
+
+.error.critical .error-list li {
+  color: #ffb3b3;
+}

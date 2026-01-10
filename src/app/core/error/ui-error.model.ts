@@ -3,8 +3,9 @@ export interface UiError {
   message: string;
   origin?: string;
   instance: string;
-  spStatusCode?: number;
+  statusCode?: number;
   level: 'info' | 'warning' | 'error' | 'critical';
+  errors?: { field: string; message: string }[];
 }
 
 export const STATUS_UI = {

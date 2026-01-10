@@ -1,3 +1,5 @@
+import { ApiProblemDetail } from "@core/error/api-problem-detail.model";
+
 export const AUTH_KEYS = {
   TOKEN: 'auth_token'
 } as const;
@@ -15,4 +17,11 @@ export function toRole(value: string | null): Role | null {
   return (Object.values(ROLES) as readonly string[]).includes(value)
     ? (value as Role)
     : null;
+}
+
+export function normalizeProblem(p: ApiProblemDetail): ApiProblemDetail {
+  if (!p.origin && p.properties?.origin) {
+    p.origin = p.properties.origin;
+  }
+  return p;
 }
